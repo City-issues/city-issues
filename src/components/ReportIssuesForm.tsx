@@ -3,15 +3,10 @@ import axios from "axios";
 import emailjs from "@emailjs/browser";
 
 const ReportIssueForm = () => {
-  // State: dito natin tinatago yung input values ng user
   const [issueType, setIssueType] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
 
-  //vite meta
-
-
-  // Validation function
   const validateForm = () => {
     if (!issueType || !location || !description) {
       alert("Please fill out all fields!");
@@ -20,22 +15,19 @@ const ReportIssueForm = () => {
     return true;
   };
 
-  // Handle submit (POST request)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // para di mag refresh
 
     if (!validateForm()) return;
 
-    // Object na ipapadala sa API
     const newReport = {
       issueType,
       location,
       description,
-      status: "pending", // default status
+      status: "pending", 
     };
 
     try {
-      // POST request papunta sa backend
       await axios.post("http://localhost:5000/issues", newReport);
       
       const result = await emailjs.send(
@@ -55,7 +47,6 @@ const ReportIssueForm = () => {
 
       alert("Report submitted successfully!");
 
-      // 🧹 Clear form after submit
       setIssueType("");
       setLocation("");
       setDescription("");
@@ -72,7 +63,6 @@ const ReportIssueForm = () => {
 
       <form onSubmit={handleSubmit}>
         
-        {/* Issue Type */}
         <input
           type="text"
           className="form-control mb-3"
@@ -90,7 +80,6 @@ const ReportIssueForm = () => {
           onChange={(e) => setLocation(e.target.value)}
         />
 
-        {/* Description */}
         <textarea
           className="form-control mb-3"
           placeholder="Description"
@@ -98,7 +87,6 @@ const ReportIssueForm = () => {
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
 
-        {/* Submit Button */}
         <button type="submit" className="btn btn-primary w-100">
           Submit Report
         </button>
