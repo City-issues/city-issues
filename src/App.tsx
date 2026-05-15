@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -24,18 +24,15 @@ const App: React.FC = () => {
             path="/"
             element={
               <>
-              <About/>
-                
+                <About />
                 <ReportIssuesForm />
                 <IssueList />
-                
               </>
             }
           />
 
           <Route path="/issues/:id" element={<IssueDetails />} />
-
-           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
 
