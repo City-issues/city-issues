@@ -10,16 +10,7 @@ function About() {
             <h1 className="text-about fw-bold">About</h1>
               
             <p>
-              This portfolio showcases the range of projects I have created using
-              <strong> React</strong> from first grading to finals. Each project
-              represents my approach to designing and building interactive user
-              interfaces and functional web applications.
-            </p>
-
-            <p>
-              Feel free to explore, try things out, and see how I bring ideas to
-              life through code. This collection reflects my progress in
-              frontend development and UI design.
+              The City Issue System is a comprehensive, centralized digital government platform designed to bridge the gap between residents and municipal authorities. It serves as an official civic engagement tool that empowers community members to report non-emergency localized infrastructure, environmental, and public safety concerns directly to local government units. By digitizing the traditional, slow-moving complaint process, this platform fosters civic participation, ensures accountability, and accelerates the maintenance of urban environments.
             </p>
 
         
