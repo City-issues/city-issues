@@ -96,4 +96,3 @@ const ReportIssueForm = () => {
 };
 
 export default ReportIssueForm;
-
